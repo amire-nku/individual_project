@@ -1,0 +1,261 @@
+/* This is for a general styling reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/FloralBanner_BG.png");
+    color: #fffced;
+    text-shadow: 2px 2px 0 #000000, -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000; 
+    padding: 10px;
+    width: 100%;
+    border-bottom: 3px solid #ffffff;
+}
+
+header h1 {
+    text-align: center;
+    flex: 1;
+}
+
+/* The following nav styles are for the navigation menu and making it change colors when interacted with */
+nav {
+    background: linear-gradient(to bottom, #3b3b3b, #222);
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 3px solid #ffffff;
+}
+
+nav h3 {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    color: #26332c;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:visited {
+    color: #7f8682;
+}
+
+nav ul li a:hover {
+    color: #c6d4cd;
+}
+
+nav ul li a:focus {
+    color: #d2e0d8;
+}
+
+nav ul li a:active {
+    color: #ffffff;
+    text-shadow: 0 0 5px #cab782, 0 0 10px #cab782;
+}
+
+/* The following are for styling general content within the page */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #ececec, #c7c7c7);
+    color:#636363;
+    border-left: 3px solid #ffffff;
+    border-right: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+}
+
+main a {
+    text-decoration: none;
+    color: #64a583;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.gallery img {
+    margin: 5px;
+    border: 5px solid;
+    width: 500px;
+}
+
+.small-gallery img {
+    width: 300px;
+}
+
+table {
+    margin: 0 auto;
+    border: 3px solid black;
+    background-color: #e6e8e3;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+caption {
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+aside {
+    text-align: center;
+    background: linear-gradient(to bottom, #c9c9c9, #8f8f8f);
+    color:#636363;
+    padding: 10px;
+    border-bottom: 3px solid #ffffff;
+}
+
+aside a {
+    text-decoration: underline;
+    color: #636363;
+}
+
+aside a:hover {
+    color: #8d8d8d;
+}
+
+aside a:active {
+    color: #aa9355;
+    text-shadow: 0 0 5px #cab782, 0 0 10px #cab782;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: white;
+    border-top: 3px solid #ffffff;
+}
+
+/* Single column styling */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main {
+        flex: 1;
+        overflow: auto;
+    }
+
+}
+
+/* Two column styling */
+@media (min-width: 901px) and (max-width: 1300px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+    }
+
+    header {
+        grid-column: span 2;
+    }
+
+    nav {
+        grid-column: span 2;
+    }
+
+    nav ul {
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    main {
+        grid-column: 1;
+        flex: 1;
+        overflow: auto;
+    }
+
+    aside {
+        grid-column: 2;
+        flex: 1;
+        overflow: auto;
+    }
+
+    footer {
+        grid-column: span 2;
+    }
+}
+
+/* Three column styling */
+@media (min-width: 1301px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+    }
+
+    header {
+        grid-column: span 3;
+    }
+    
+    nav {
+        grid-column: 1;
+        flex: 1;
+        overflow: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    main {
+        grid-column: 2;
+        flex: 1;
+        overflow: auto;
+    }
+
+    aside {
+        grid-column: 3;
+        flex: 1;
+        overflow: auto;
+    }
+
+    footer {
+        grid-column: span 3;
+    }
+}

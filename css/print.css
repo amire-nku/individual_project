@@ -1,0 +1,10 @@
+/*When being printed, the document will reset to a more legible format with all the information, no longer sectioned off :)*/
+
+body {
+    font-family: Arial;
+    color: black;
+}
+
+nav, aside, footer {
+    display: none;
+}
